@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para la mejor Mamá del mundo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --burgundy: #800020;
+        }
+        body {
+            background: linear-gradient(135deg, #1a0005 0%, #4d0013 100%);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .font-cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+        .font-special {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        /* Animación de Nieve */
+        #snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+
+        /* Estilos de la Carta */
+        .letter-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 15px;
+            position: relative;
+            z-index: 10;
+        }
+        .letter-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* Carrusel Automático Animado */
+        .carousel-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 4px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        .carousel-item {
+            min-width: 100%;
+            height: 500px;
+            background: #222;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Botón de Música */
+        .spotify-btn {
+            background: #1DB954;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4);
+        }
+        .spotify-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: #1ed760;
+        }
+
+        .decoration {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="snow-container"></div>
+
+    <main class="px-4 py-10 relative z-10">
+        <!-- Título principal -->
+        <header class="text-center mb-10">
+            <h1 class="font-cursive text-6xl md:text-7xl text-yellow-500 mb-2">Feliz Navidad</h1>
+            <p class="text-xl uppercase tracking-widest text-gray-300">Para la madre más increíble</p>
+        </header>
+
+        <!-- Contenedor de la Carta -->
+        <div class="letter-container">
+            <span class="decoration top-2 left-4">❄️</span>
+            <span class="decoration bottom-2 right-4">🎄</span>
+            
+            <h2 class="font-cursive text-4xl text-yellow-500 mb-6 text-center">Querida Mami,</h2>
+            
+            <div class="letter-content text-gray-100 italic">
+                <p class="mb-6">
+                    Más que felicitarte por navidad escribo esto para hacerte llegar mi amor y agradecimiento a la persona más fuerte e increíble que conozco y que tengo la felicidad de llamar MADRE. Sabiendo los desafíos y obstáculos que sería criar a un niño con la actitud idéntica a la de mi padre, lograste encaminarme a mis metas personales y ser un pilar fundamental para mi vida.
+                </p>
+                <p class="mb-6">
+                    Con mucho cariño, quiero darte esta carta como regalo para decirte que, aunque tus desafíos continúan, han dado frutos suficientes para ver que, a pesar de que yo tenga una actitud que sigo conociendo, conseguiste no solo tener un hijo así, sino tres; y estoy seguro de que cada uno da todo de sí para seguir el camino que nos diste y te ama con todo el corazón.
+                </p>
+                <p class="mb-6">
+                    Estas palabras son para felicitarte en Navidad, pero también quiero agradecerte por todo lo que has hecho, porque lograste criar y encaminar a tres hijos y ser un pilar en sus vidas. Te agradezco infinitamente poder tener una madre como tú.
+                </p>
+                <!-- Nueva tipografía para el cierre -->
+                <p class="text-center font-special text-5xl md:text-6xl text-yellow-400 mt-12 mb-4 drop-shadow-[0_2px_10px_rgba(234,179,8,0.5)]">
+                    ¡TE AMOOO MUCHÍSIMO, MAMI! ❤️
+                </p>
+            </div>
+        </div>
+
+        <!-- Sección de Recuerdos con Movimiento Automático -->
+        <section class="max-w-5xl mx-auto mt-20">
+            <h3 class="text-center text-2xl font-semibold mb-8 border-b border-yellow-500 pb-2 inline-block mx-auto flex justify-center w-max">
+                Nuestros Momentos 📸
+            </h3>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Imagen 1 -->
+                    <div class="carousel-item">
+                        <img src="file:///C:/Users/User/Desktop/Carta navidad/WhatsApp Image 2025-12-23 at 18.38.16.jpeg" alt="Recuerdo 1" onerror="this.src='https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=400&h=500'">
+                    </div>
+                    <!-- Imagen 2 -->
+                    <div class="carousel-item">
+                        <img src="file:///C:/Users/User/Desktop/Carta navidad/WhatsApp Image 2025-12-23 at 18.38.15.jpeg" alt="Recuerdo 2" onerror="this.src='https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=400&h=500'">
+                    </div>
+                    <!-- Imagen 3 -->
+                    <div class="carousel-item">
+                        <img src="file:///C:/Users/User/Desktop/Carta navidad/WhatsApp Image 2025-12-23 at 18.38.15 (2).jpeg" alt="Recuerdo 3" onerror="this.src='https://images.unsplash.com/photo-1544427928-21f3bd07a2fe?auto=format&fit=crop&w=400&h=500'">
+                    </div>
+                    <!-- Imagen 4 -->
+                    <div class="carousel-item">
+                        <img src="file:///C:/Users/User/Desktop/Carta navidad/WhatsApp Image 2025-12-23 at 18.38.15 (1).jpeg" alt="Recuerdo 4" onerror="this.src='https://images.unsplash.com/photo-1511332264633-54911bc90520?auto=format&fit=crop&w=400&h=500'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Música -->
+        <section class="text-center mt-20 mb-20">
+            <h4 class="mb-6 text-lg text-gray-300">He preparado una canción especial para este momento:</h4>
+            <a href="https://open.spotify.com/track/3lGMtkONrZdJ8kTCg6KIFf?si=0B_6pFzNQy6OHjMgZlGC7Q" target="_blank" class="spotify-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.491 17.293c-.217.356-.677.469-1.031.252-2.863-1.748-6.467-2.143-10.712-1.174-.407.093-.815-.164-.908-.571-.093-.407.164-.815.571-.908 4.654-1.063 8.636-.615 11.828 1.332.353.217.465.676.252 1.029zm1.468-3.264c-.273.444-.852.585-1.296.312-3.275-2.013-8.267-2.597-12.138-1.422-.5.152-1.026-.131-1.178-.631-.152-.5.131-1.026.631-1.178 4.417-1.341 9.907-.687 13.67 1.625.443.272.584.851.311 1.294zm.128-3.414c-3.927-2.332-10.407-2.546-14.18-1.401-.603.183-1.246-.164-1.429-.767-.183-.603.164-1.246.767-1.429 4.336-1.317 11.492-1.063 16.002 1.613.542.321.721 1.024.4 1.566-.322.542-1.023.72-1.56.398z"/>
+                </svg>
+                Escuchar en Spotify
+            </a>
+        </section>
+    </main>
+
+    <script>
+        // Crear copos de nieve
+        function createSnowflake() {
+            const container = document.getElementById('snow-container');
+            const flake = document.createElement('div');
+            flake.classList.add('snowflake');
+            
+            const size = Math.random() * 5 + 2 + 'px';
+            flake.style.width = size;
+            flake.style.height = size;
+            flake.style.left = Math.random() * 100 + 'vw';
+            flake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            flake.style.opacity = Math.random();
+            
+            container.appendChild(flake);
+            
+            setTimeout(() => {
+                flake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+
+        // Lógica del Carrusel Automático
+        const track = document.getElementById('carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        let index = 0;
+
+        function moveCarousel() {
+            index++;
+            if (index >= items.length) {
+                index = 0;
+            }
+            const offset = index * -100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Cambiar imagen cada 3 segundos
+        setInterval(moveCarousel, 3000);
+
+        console.log("Carta optimizada. ¡Feliz Navidad!");
+    </script>
+</body>
+</html>
